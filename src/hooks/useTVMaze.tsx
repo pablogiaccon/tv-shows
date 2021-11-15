@@ -64,8 +64,8 @@ interface TVMazeContextData {
   setSeasonSelected(Dispatch: number): void;
   setShowSelected(Dispatch: number): void;
   getEpisodeById(id: number): Episode;
-  loadShows(): void;
-  loadShowInformation(): void;
+  loadShows(): Promise<void>;
+  loadShowInformation(): Promise<void>;
   setSearchShow(Dispatch: string): void;
 }
 
@@ -124,8 +124,7 @@ export function TVMazeProvider({ children }: Props) {
       setEpisodes(loadedEpisodesFormatted);
       setSeasons(loadedSeasons);
     } catch (err: any) {
-      //
-      console.log(err);
+      throw new Error(err);
     }
   }, [showSelected]);
 
@@ -149,8 +148,7 @@ export function TVMazeProvider({ children }: Props) {
       });
       setShows(loadedShowsFormatted);
     } catch (err: any) {
-      //
-      console.log(err);
+      throw new Error(err);
     }
   }
 
@@ -182,8 +180,7 @@ export function TVMazeProvider({ children }: Props) {
       setShows([]);
       setShows(loadedShowsFormatted);
     } catch (err: any) {
-      //
-      console.log(err);
+      throw new Error(err);
     }
   }, [searchShow]);
 

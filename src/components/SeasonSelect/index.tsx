@@ -7,7 +7,7 @@ import * as S from './styles';
 export function SeasonSelect() {
   const { seasons } = useTVMaze();
   return (
-    <S.Container>
+    <S.Container testID="season-select">
       <S.Title>Seasons:</S.Title>
 
       <S.SeasonsList horizontal showsHorizontalScrollIndicator={false}>

@@ -10,7 +10,10 @@ interface Props {
 export function Background({ children }: Props) {
   const { colors } = theme;
   return (
-    <S.Container colors={[colors.secondary80, colors.secondary100]}>
+    <S.Container
+      colors={[colors.secondary80, colors.secondary100]}
+      testID="background"
+    >
       {children}
     </S.Container>
   );

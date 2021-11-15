@@ -19,13 +19,17 @@ export function Header({ title, action }: Props) {
 
   return (
     <LinearGradient colors={[secondary100, secondary40]}>
-      <S.Container>
-        <S.Button onPress={goBack}>
+      <S.Container testID="header">
+        <S.Button onPress={goBack} testID="button-go-back">
           <Feather name="arrow-left" size={24} color={primary} />
         </S.Button>
-        <S.HeaderTitle>{title}</S.HeaderTitle>
+        <S.HeaderTitle testID="title">{title}</S.HeaderTitle>
 
-        {action ? <View>{action}</View> : <View style={{ width: 24 }} />}
+        {action ? (
+          <View testID="action">{action}</View>
+        ) : (
+          <View style={{ width: 24 }} />
+        )}
       </S.Container>
     </LinearGradient>
   );

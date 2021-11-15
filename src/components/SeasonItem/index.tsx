@@ -24,12 +24,16 @@ export function SeasonItem({ season, ...rest }: Props) {
   }
 
   return (
-    <RectButton onPress={handleSelectSeason} {...rest}>
+    <RectButton
+      onPress={handleSelectSeason}
+      {...rest}
+      testID="season-item-container"
+    >
       <S.Container colors={[secondary50, secondary70]}>
-        <S.Content checked={isChecked}>
-          <S.Check checked={isChecked} />
+        <S.Content checked={isChecked} testID="season-item">
+          <S.Check checked={isChecked} testID="check-season-item" />
 
-          <S.SeasonNumber>{number}</S.SeasonNumber>
+          <S.SeasonNumber testID="season-item-number">{number}</S.SeasonNumber>
         </S.Content>
       </S.Container>
     </RectButton>

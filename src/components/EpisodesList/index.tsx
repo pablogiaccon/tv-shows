@@ -11,7 +11,7 @@ export function EpisodesList() {
   const { episodes } = useTVMaze();
 
   return (
-    <S.Container>
+    <S.Container testID="episode-list">
       <S.Header>
         <S.Title>Episodes</S.Title>
         <S.Total>Total {episodes?.length}</S.Total>

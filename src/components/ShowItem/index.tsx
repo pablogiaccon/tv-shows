@@ -26,7 +26,7 @@ export function ShowItem({ show }: Props) {
   }
 
   return (
-    <S.Container onPress={handleGoToDetails}>
+    <S.Container onPress={handleGoToDetails} testID="show-item">
       {image ? (
         <S.Image
           source={{
@@ -35,11 +35,11 @@ export function ShowItem({ show }: Props) {
           resizeMode="cover"
         />
       ) : (
-        <S.Image source={IconPng} resizeMode="cover" />
+        <S.Image source={IconPng} resizeMode="cover" testID="default-image" />
       )}
 
       <S.Content>
-        <S.Title>{name}</S.Title>
+        <S.Title testID="show-item-name">{name}</S.Title>
 
         <S.Footer>
           <S.AverageContainer>

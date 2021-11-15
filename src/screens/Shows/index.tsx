@@ -27,10 +27,10 @@ export function Shows() {
   return (
     <Background>
       <Header title="Shows" action={<Search />} />
-      <S.Container>
+      <S.Container testID="shows-page">
         <S.Header>
           {!!searchShow && (
-            <S.Search onPress={handleCleanSearch}>
+            <S.Search onPress={handleCleanSearch} testID="search">
               <S.SearchText>Search: {searchShow}</S.SearchText>
 
               <Feather name="x-circle" size={18} color={theme.colors.primary} />

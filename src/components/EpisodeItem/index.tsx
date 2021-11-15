@@ -21,7 +21,7 @@ export function EpisodeItem({ episode }: Props) {
   }
 
   return (
-    <S.Container onPress={handleGoToDetails}>
+    <S.Container onPress={handleGoToDetails} testID="episode-item">
       {image ? (
         <S.Image
           source={{
@@ -30,11 +30,11 @@ export function EpisodeItem({ episode }: Props) {
           resizeMode="cover"
         />
       ) : (
-        <S.Image source={IconPng} resizeMode="cover" />
+        <S.Image source={IconPng} resizeMode="cover" testID="default-image" />
       )}
 
       <S.Content>
-        <S.Title>{name}</S.Title>
+        <S.Title testID="episode-item-name">{name}</S.Title>
 
         <S.Footer>
           <S.EpisodeNumber>{number}</S.EpisodeNumber>

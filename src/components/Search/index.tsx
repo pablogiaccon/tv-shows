@@ -27,7 +27,7 @@ export function Search() {
 
   return (
     <>
-      <S.ButtonSearch onPress={handleShowModal}>
+      <S.ButtonSearch onPress={handleShowModal} testID="search-icon">
         <Feather name="search" size={24} color={theme.colors.primary} />
       </S.ButtonSearch>
 
@@ -39,7 +39,7 @@ export function Search() {
           setModalVisible(!modalVisible);
         }}
       >
-        <S.Container>
+        <S.Container testID="modal-search">
           <S.SearchBox>
             <S.Input
               value={term}
@@ -51,8 +51,9 @@ export function Search() {
               returnKeyLabel="Search"
               onSubmitEditing={handleSearch}
               autoFocus
+              testID="input-search"
             />
-            <S.Button onPress={handleSearch}>
+            <S.Button onPress={handleSearch} testID="button-search">
               <Feather
                 name="search"
                 size={24}

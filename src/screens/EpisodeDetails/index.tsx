@@ -26,7 +26,7 @@ export function EpisodeDetails() {
 
   return (
     <Background>
-      <S.Container>
+      <S.Container testID="episode-details">
         <Header title="Episode Details" />
 
         {image ? (
@@ -37,11 +37,11 @@ export function EpisodeDetails() {
             resizeMode="cover"
           />
         ) : (
-          <S.Image source={IconPng} resizeMode="cover" />
+          <S.Image source={IconPng} resizeMode="cover" testID="default-image" />
         )}
 
         <S.Content>
-          <S.Title>{name}</S.Title>
+          <S.Title testID="episode-item-name">{name}</S.Title>
 
           <S.Information>
             <S.InfoGroup>

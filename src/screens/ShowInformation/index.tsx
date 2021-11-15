@@ -28,7 +28,7 @@ export function ShowInformation() {
 
   return (
     <Background>
-      <S.Container>
+      <S.Container testID="show-information">
         <S.InformationContainer>
           <S.Image
             source={{ uri: show?.image.original }}
@@ -36,7 +36,7 @@ export function ShowInformation() {
           />
 
           <S.Information>
-            <S.Title>{show?.name}</S.Title>
+            <S.Title testID="show-name">{show?.name}</S.Title>
 
             <S.Summary showsVerticalScrollIndicator>
               <S.SummaryText>{show?.summary}</S.SummaryText>
